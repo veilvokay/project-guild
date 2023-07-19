@@ -1,8 +1,8 @@
 import React from "react";
 import "./frontend/styles/App.sass";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import WebRoutes from "./frontend/website/WebRoutes";
 import MainPage from "./frontend/MainPage";
+import WebRoutes from "./frontend/website/WebRoutes";
 import PlRoutes from "./frontend/platform/PlRoutes";
 
 function App() {
