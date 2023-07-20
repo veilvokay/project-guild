@@ -1,7 +1,8 @@
 import React from "react";
 import "./Button.sass";
 
-interface IButton extends React.HTMLAttributes<HTMLButtonElement> {
+interface IButton
+  extends Omit<React.HTMLAttributes<HTMLButtonElement>, "className"> {
   btnClass?: string;
 }
 

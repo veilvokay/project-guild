@@ -2,11 +2,13 @@ export enum AppRoutes {
     // Main Page
     MAIN_PAGE = '/',
     // Website Pages
-    WEB_HOME = '/website-home'
+    WEB_HOME = '/website-home',
     // Platform Pages
+    PL_HOME = '/platform-home'
 }
 
-export enum AppRoutesNames {
-    Home = 'Home',
-    Website = 'Website'
+export const AppRoutesNames = {
+    [AppRoutes.MAIN_PAGE]: 'Home',
+    [AppRoutes.WEB_HOME]: 'Website',
+    [AppRoutes.PL_HOME]: 'Platform'
 }

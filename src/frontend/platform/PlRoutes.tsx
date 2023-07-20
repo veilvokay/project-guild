@@ -5,7 +5,7 @@ import PlHome from "./pages/PlHome";
 const PlRoutes = () => {
   return (
     <Routes>
-      <Route path="/pl-home" element={<PlHome />} />
+      <Route path="/platform-home" element={<PlHome />} />
     </Routes>
   );
 };
