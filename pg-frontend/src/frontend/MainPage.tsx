@@ -11,7 +11,7 @@ const MainPage = () => {
   console.log(location, "location");
 
   return (
-    <Page id="main-page">
+    <Page pageType="main" id="main-page">
       <Container containerClass="main-page-container">
         <RouterLink
           to={AppRoutes.WEB_HOME}
