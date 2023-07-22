@@ -1,3 +1,3 @@
-** Project Guild **
+# Project Guild
 
 Simple webapp for guild management.
