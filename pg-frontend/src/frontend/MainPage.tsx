@@ -14,10 +14,12 @@ const MainPage = () => {
     <Page pageType="main" id="main-page">
       <Container containerClass="main-page-container">
         <RouterLink
+          linkType="button"
           to={AppRoutes.WEB_HOME}
           goToName={AppRoutesNames[AppRoutes.WEB_HOME]}
         />
         <RouterLink
+          linkType="button"
           to={AppRoutes.PL_HOME}
           goToName={AppRoutesNames[AppRoutes.PL_HOME]}
         />

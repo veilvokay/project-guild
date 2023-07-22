@@ -1,25 +1,43 @@
 import React from "react";
 import "./PlatformNavbar.sass";
 import RouterLink from "frontend/components/common/Link/RouterLink";
+import Container from "frontend/components/common/Container/Container";
+import { AppRoutes, AppRoutesNames } from "frontend/AppRoutes";
 
 const PlatformNavbar = () => {
   return (
-    <nav className="platform-nav">
-      <ul className="platform-nav__list">
-        <li className="platform-nav__list-item desc-2">
-          <RouterLink to="/" goToName="1" />
-        </li>
-        <li className="platform-nav__list-item desc-2">
-          <RouterLink to="/" goToName="1" />
-        </li>
-        <li className="platform-nav__list-item desc-2">
-          <RouterLink to="/" goToName="1" />
-        </li>
-        <li className="platform-nav__list-item desc-2">
-          <RouterLink to="/" goToName="1" />
-        </li>
-      </ul>
-    </nav>
+    <div className="platform-nav">
+      <Container>
+        <div className="platform-nav__wrapper">
+          <p className="desc-2 platform-nav__name">Dashboard</p>
+          <nav className="platform-nav__nav">
+            <ul className="platform-nav__list">
+              <li className="platform-nav__list-item desc-3">
+                <RouterLink
+                  linkType="inline"
+                  to={AppRoutes.PL_MY_STATS}
+                  goToName={AppRoutesNames[AppRoutes.PL_MY_STATS]}
+                />
+              </li>
+              <li className="platform-nav__list-item desc-3">
+                <RouterLink
+                  linkType="inline"
+                  to={AppRoutes.PL_MY_PARTY}
+                  goToName={AppRoutesNames[AppRoutes.PL_MY_PARTY]}
+                />
+              </li>
+              <li className="platform-nav__list-item desc-3">
+                <RouterLink
+                  linkType="inline"
+                  to={AppRoutes.PL_GUILD_STATS}
+                  goToName={AppRoutesNames[AppRoutes.PL_GUILD_STATS]}
+                />
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </Container>
+    </div>
   );
 };
 

@@ -2,11 +2,19 @@ import React from "react";
 import "./Page.sass";
 import PlatformNavbar from "frontend/platform/components/Navbar/PlatformNavbar";
 
-interface IPageProps extends React.HTMLAttributes<HTMLDivElement> {
+interface IPageProps
+  extends Omit<React.HTMLAttributes<HTMLDivElement>, "className"> {
   pageType: "main" | "website" | "platform";
+  pageClass?: string;
 }
 
-const Page = ({ pageType, children, ...rest }: IPageProps): JSX.Element => {
+const Page = ({
+  pageType,
+  pageClass,
+  children,
+  ...rest
+}: IPageProps): JSX.Element => {
+  const className = `page ${pageClass ? pageClass : ""}`;
   const renderNav = () => {
     switch (pageType) {
       case "main":
@@ -22,7 +30,7 @@ const Page = ({ pageType, children, ...rest }: IPageProps): JSX.Element => {
   return (
     <>
       {renderNav()}
-      <div className="page" {...rest}>
+      <div className={className} {...rest}>
         {children}
       </div>
     </>

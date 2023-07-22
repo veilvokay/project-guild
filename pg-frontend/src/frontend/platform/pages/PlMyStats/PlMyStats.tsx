@@ -1,12 +1,11 @@
 import React from "react";
-import "./PlHome.sass";
 import Page from "frontend/components/common/Page/Page";
 import Container from "frontend/components/common/Container/Container";
-import ActiveArea from "../components/ActiveArea/ActiveArea";
+import ActiveArea from "frontend/platform/components/ActiveArea/ActiveArea";
 
-const PlHome = () => {
+const PlMyStats = () => {
   return (
-    <Page pageType="platform" pageClass="platform-home-page">
+    <Page pageType="platform" pageClass="platform-my-stats-page">
       <Container>
         <ActiveArea />
       </Container>
@@ -14,4 +13,4 @@ const PlHome = () => {
   );
 };
 
-export default PlHome;
+export default PlMyStats;
