@@ -2,6 +2,8 @@
 
 # dependencies
 pg-frontend/node_modules
+node_modules
+MyStats.jfif
 /.pnp
 .pnp.js
 

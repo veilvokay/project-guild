@@ -11,6 +11,10 @@
 @mixin mixed-lbl($args...)
     @include typography($args...)
 
+// title h0
+@mixin title-h0
+    @include mixed-lbl(var(--color-white), var(--sub-font), var(--font-size-h0), var(--font-weight-7), var(--letter-spacing-h1), var(--line-height-h1))
+
 // title h1
 @mixin title-h1
     @include mixed-lbl(var(--color-white), var(--sub-font), var(--font-size-h1), var(--font-weight-7), var(--letter-spacing-h1), var(--line-height-h1))
@@ -40,13 +44,13 @@
     @include mixed-lbl(var(--color-white), var(--main-font), var(--font-size-label3), var(--font-weight-3), var(--letter-spacing-label3), var(--line-height-label))
 
 @mixin desc-1
-    @include mixed-lbl(var(--color-feldgrau), var(--main-font), var(--font-size-desc1), var(--font-weight-3), var(--letter-spacing-desc1), var(--line-height-desc1))
+    @include mixed-lbl(var(--color-white), var(--main-font), var(--font-size-desc1), var(--font-weight-3), var(--letter-spacing-desc1), var(--line-height-desc1))
 
 @mixin desc-2
-    @include mixed-lbl(var(--color-feldgrau), var(--main-font), var(--font-size-desc2), var(--font-weight-3), var(--letter-spacing-desc2), var(--line-height-desc2))
+    @include mixed-lbl(var(--color-white), var(--main-font), var(--font-size-desc2), var(--font-weight-3), var(--letter-spacing-desc2), var(--line-height-desc2))
 
 @mixin desc-3
-    @include mixed-lbl(var(--color-feldgrau), var(--main-font), var(--font-size-desc3), var(--font-weight-3), var(--letter-spacing-desc3), var(--line-height-desc3))
+    @include mixed-lbl(var(--color-white), var(--main-font), var(--font-size-desc3), var(--font-weight-3), var(--letter-spacing-desc3), var(--line-height-desc3))
 
 @mixin quote-1
     @include mixed-lbl(var(--color-submarine), var(--main-font), var(--font-size-quote1), var(--font-weight-3), var(--letter-spacing-quote1), var(--line-height-quote1))
@@ -99,6 +103,9 @@ article, footer, header, nav, section
 
     &.low-text
         text-transform: lowercase
+
+    &.title-h0
+        @include title-h1
 
     &.title-h1
         @include title-h1

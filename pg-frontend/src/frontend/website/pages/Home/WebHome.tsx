@@ -5,7 +5,7 @@ import Container from "frontend/components/common/Container/Container";
 
 const WebHome = () => {
   return (
-    <Page id="website-page">
+    <Page pageType="website" id="website-page">
       <Container>
         <h1 className="title-h1">Website</h1>
       </Container>

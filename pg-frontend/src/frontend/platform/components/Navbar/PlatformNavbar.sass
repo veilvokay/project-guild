@@ -1,0 +1,27 @@
+@import '/src/frontend/styles/common/gem.scss'
+
+.platform-nav
+    position: absolute
+    top: gem(14)
+    left: 0
+    right: 0
+    z-index: 9999
+    &__name
+        margin-right: gem(100)
+    &__wrapper
+        width: 100%
+        // height: gem(96)
+        padding: gem(36)
+        background-color: var(--color-blue)
+        border-radius: gem(32)
+        display: flex
+        align-items: center
+    &__nav
+        width: auto
+    &__list
+        display: flex
+        align-items: center
+        justify-content: space-evenly
+        width: 100%
+        &-item:not(:last-of-type)
+            margin-right: gem(30)
