@@ -1,7 +1,7 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
 import { AppRoutes } from "frontend/AppRoutes";
-import PlHome from "./pages/PlHome";
+import PlHome from "./pages/PlHome/PlHome";
 import PlMyStats from "./pages/PlMyStats/PlMyStats";
 import PlMyParty from "./pages/PlMyParty/PlMyParty";
 import PlGuildStats from "./pages/PlGuildStats/PlGuildStats";

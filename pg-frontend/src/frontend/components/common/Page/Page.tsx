@@ -1,6 +1,8 @@
 import React from "react";
 import "./Page.sass";
 import PlatformNavbar from "frontend/platform/components/Navbar/PlatformNavbar";
+import Container from "../Container/Container";
+import ActiveArea from "frontend/platform/components/ActiveArea/ActiveArea";
 
 interface IPageProps
   extends Omit<React.HTMLAttributes<HTMLDivElement>, "className"> {
@@ -14,7 +16,7 @@ const Page = ({
   children,
   ...rest
 }: IPageProps): JSX.Element => {
-  const className = `page ${pageClass ? pageClass : ""}`;
+  const className = `page page-${pageType} ${pageClass ? pageClass : ""}`;
   const renderNav = () => {
     switch (pageType) {
       case "main":
@@ -30,9 +32,17 @@ const Page = ({
   return (
     <>
       {renderNav()}
-      <div className={className} {...rest}>
-        {children}
-      </div>
+      {pageType === "platform" ? (
+        <div className={className} {...rest}>
+          <Container>
+            <ActiveArea>{children}</ActiveArea>
+          </Container>
+        </div>
+      ) : (
+        <div className={className} {...rest}>
+          {children}
+        </div>
+      )}
     </>
   );
 };
