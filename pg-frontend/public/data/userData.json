@@ -1,0 +1,10 @@
+{
+    "userID": "xxx",
+    "mainCharacterName": "MyCharacter",
+    "characterLevel": "17",
+    "inGameStatus": "member",
+    "websiteRights": "default",
+    "weeklyPlaytime": "40+",
+    "timeZone": "GMT +1",
+    "daysAvailable": ["Monday", "Tuesday"]
+}

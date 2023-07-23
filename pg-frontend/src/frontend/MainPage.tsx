@@ -3,13 +3,9 @@ import React from "react";
 import Page from "./components/common/Page/Page";
 import { AppRoutes, AppRoutesNames } from "./AppRoutes";
 import RouterLink from "./components/common/Link/RouterLink";
-import { useLocation } from "react-router-dom";
 import Container from "./components/common/Container/Container";
 
 const MainPage = () => {
-  const location = useLocation();
-  console.log(location, "location");
-
   return (
     <Page pageType="main" id="main-page">
       <Container containerClass="main-page-container">
