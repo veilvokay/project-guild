@@ -7,6 +7,10 @@ logging:
     org.springframework.security: DEBUG
 
 spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/project-guild
+    username: postgres
+    password: postgres
   security:
     oauth2:
       resourceserver:

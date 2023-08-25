@@ -1,0 +1,14 @@
+version: '3.4'
+
+services:
+  pg-db:
+    image: postgres
+    container_name: pg-db
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: project-guild
+    ports:
+      - 5432:5432
+    volumes:
+      - /db/var/lib/postgresql/data
