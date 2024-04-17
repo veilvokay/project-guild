@@ -1,10 +1,9 @@
 server:
-  port: 9000
+  port: ${AUTH_PORT}
 
 logging:
   level:
     org.springframework.security: DEBUG
-
 
 spring:
   security:
@@ -18,7 +17,7 @@ spring:
             authorizationGrantType: authorization_code
             scope:
               - identify
-            redirectUri: "http://127.0.0.1:9000/login/oauth2/code/discord"
+            redirectUri: ${AUTH_REDIRECT_URL}
             clientName: Project Guild
         provider:
           discord:

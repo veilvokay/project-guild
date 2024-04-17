@@ -1,0 +1,43 @@
+version: "3.4"
+
+services:
+  pg-db:
+    image: postgres
+    container_name: pg-db
+    environment:
+      POSTGRES_USER: ${DB_LOGIN}
+      POSTGRES_PASSWORD: ${DB_PW}
+      POSTGRES_DB: project-guild
+    ports:
+      - 5432:5432
+    volumes:
+      - /db/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+  pg-auth-server:
+    build: pg-auth-server/
+    container_name: pg-auth-server
+    environment:
+      DISCORD_CLIENT_ID: ${DISCORD_CLIENT_ID}
+      DISCORD_CLIENT_SECRET: ${DISCORD_CLIENT_SECRET}
+      AUTH_PORT: ${AUTH_PORT}
+      AUTH_REDIRECT_URL: ${AUTH_REDIRECT_URL}
+    ports:
+      - ${AUTH_PORT}:${AUTH_PORT}
+  pg-resource-server:
+    build: pg-resource-server/
+    container_name: pg-resource-server
+    environment:
+      RESOURCE_SRV_PORT: ${RESOURCE_SRV_PORT}
+      AUTH_URL: ${AUTH_URL}
+      DB_URL: ${DB_URL}
+      DB_LOGIN: ${DB_LOGIN}
+      DB_PW: ${DB_PW}
+    ports:
+      - ${RESOURCE_SRV_PORT}:${RESOURCE_SRV_PORT}
+    depends_on:
+      pg-db:
+        condition: service_healthy
