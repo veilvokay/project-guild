@@ -1,6 +1,6 @@
 
 server:
-  port: 8090
+  port: ${RESOURCE_SRV_PORT}
 
 logging:
   level:
@@ -8,11 +8,11 @@ logging:
 
 spring:
   datasource:
-    url: jdbc:postgresql://localhost:5432/project-guild
-    username: postgres
-    password: postgres
+    url: ${DB_URL}
+    username: ${DB_LOGIN}
+    password: ${DB_PW}
   security:
     oauth2:
       resourceserver:
         jwt:
-          issuer-uri: http://localhost:9000
+          issuer-uri: ${AUTH_URL}
